@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descion | Hogwarts School Of Witchcraft & Wizardry</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+</head>
+<style>
+    *{
+        font-family: "Parisienne", cursive;
+
+    }
+    nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        border-radius: 0.4vw;
+        border:1px solid silver;
+    }
+    nav img{
+        height: 15vh;
+        width: 15vw;
+    }
+    #display-name{
+        padding:2vw;
+    }
+    h1{
+        font-size: 2rem;
+    }
+    h3{
+        font-size: 1.5rem;
+    }
+    p{
+        font-size: 1.2rem;
+    }
+    @media(max-width:400px){
+        nav img{
+            width: 40vw;
+        }
+    }
+    @media(max-width:800px){
+        nav img{
+            width: 30vw;
+        }
+    }
+</style>
+<body>
+    
+    <nav>
+        <img src="/imgs/hogwarts/logo.png" alt="">
+        <div class="div">
+        <h1>Hogwarts School of Witchcraft & Wizardry</h1> <hr>
+        <p>Hogwarts Castle, South Hogwarts Region, Highlands, Scotland, Great Britain</p>
+    </div>
+        
+    </nav>
+    
+    <div id="display-name"></div>
+    
+            
+    
+</body>
+<!-- Assuming you have a div with id "display-name" where you want to show the name -->
+<div id="display-name"></div>
+
+<script>
+    // Retrieve the name from localStorage
+    let name = localStorage.getItem("name");
+
+    // Get the element where you want to display the name
+    let displayDiv = document.getElementById('display-name');
+
+    // Set the innerHTML of the display div to include the retrieved name
+    displayDiv.innerHTML = `<h3>Dear ${name},</h3>
+<p> Thank you, for your interest in Hogwarts School of Witchcraft & Wizardry,
+We regret to inform you that after careful consideration, your application to Hogwarts School of Witchcraft & Wizardry has been declined. During our review process,  it has come to our attention through our enchanted screening processes that you possess qualities that align more closely with the Muggle world.
+</p><p>
+While we appreciate your interest, Hogwarts is exclusively for those with magical abilities. We encourage you to pursue your interests in the Muggle world and wish you success in all your future endeavors.
+</p><p> <br>
+Yours sincerely,
+</p><p><br>
+<b>Professor Minerva McGonagall (Not Really)</b></p><p>
+Deputy Headmistress  </p><p>
+Hogwarts School of Witchcraft & Wizardry</p>`;
+</script>
+
+</html>
