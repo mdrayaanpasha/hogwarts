@@ -1,302 +1,764 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hogwarts School of Witchcraft and Wizardry</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://mdrayaanpasha.github.io/hogwarts/css/styles.css">
-    <link rel="stylesheet" href="https://mdrayaanpasha.github.io/hogwarts/css/footer.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hogwarts Legacy: The Official School Portal</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-</head>
-<body>
-  <nav class="navbar navbar-expand-lg fixed-top glass" id="myNavbar">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="https://mdrayaanpasha.github.io/hogwarts/html/index.html">
-            <img src="https://mdrayaanpasha.github.io/hogwarts//imgs/hogwarts/logo.png" alt="Hogwarts Logo" >
-            
-        </a>
-        <h4>Hogwarts School </h4>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="https://mdrayaanpasha.github.io/hogwarts/html/departments.html">Departments</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://mdrayaanpasha.github.io/hogwarts/html/faculty.html">Faculty</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://mdrayaanpasha.github.io/hogwarts/html/houses.html">Houses</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://mdrayaanpasha.github.io/hogwarts/html/sports.html">Sports</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="https://mdrayaanpasha.github.io/hogwarts/html/index.html#apply">Apply!</a>
-              </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-<div class="phone-disp">
-  <video src="https://mdrayaanpasha.github.io/hogwarts/imgs/hogwarts/phone-home.mp4" autoplay muted></video>
-</div>
+  <script src="https://cdn.tailwindcss.com"></script>
 
-<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/hogwarts/1.jpg" class="d-block w-100" alt="Hogwarts Castle">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Hogwarts School</h5>
-        <p>Welcome to the magical world of Hogwarts.</p>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/hogwarts/2.jpg" class="d-block w-100" alt="Great Hall">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Great Hall</h5>
-        <p>The heart of Hogwarts where students gather.</p>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/hogwarts/3.webp" class="d-block w-100" alt="Quidditch Pitch">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Quidditch Pitch</h5>
-        <p>Home of the exhilarating game of Quidditch.</p>
-      </div>
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-<hr>
-<div class="about">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
 
-  <div class="flex-info mar">
-    <center>
-    <div class="img">
-      <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/hogwarts/logo.png" class="logo" alt="">
-    </div>
-    <div class="info"> 
-      <p>Hogwarts was founded in the <span class="theme">Highlands of Scotland</span> around the <span class="theme">9th or 10th century</span> by <span class="theme">Godric Gryffindor</span>, <span class="theme">Rowena Ravenclaw</span>, <span class="theme">Helga Hufflepuff</span>, and <span class="theme">Salazar Slytherin</span>. The school was established to educate young wizards and witches and protect them from <span class="theme">Muggle persecution</span>. According to legend, <span class="theme">Rowena Ravenclaw</span> named Hogwarts after dreaming of a <span class="theme">warty hog</span> leading her to a <span class="theme">cliff by a lake</span>. Since its inception, Hogwarts has educated most wizarding children in <span class="theme">Great Britain and Ireland</span>, keeping its location hidden from <span class="theme">Muggles</span> and other wizard
-        ing schools.</p>
-      </center>
-      </div>
-     
-    </div>
-  </div>
-  <hr>
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Merriweather:wght@300;400;700&family=Roboto:wght@300;400;500;700&display=swap"
+    rel="stylesheet">
   <style>
-    .container{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    /* Custom CSS for deep HP immersion and hyper-modern effects */
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+      /* Dark, gradient background */
+      color: #e0e0e0;
+      /* Soft white for readability */
+      overflow-x: hidden;
+      /* Prevent horizontal scroll */
     }
-    
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: 'Cinzel', serif;
+      /* Regal and ancient feel */
+      color: #fce38a;
+      /* Golden snitch glow */
+    }
+
+    p {
+      font-family: 'Merriweather', serif;
+      /* Classic, readable serif for body text */
+    }
+
+    /* Glassmorphism for a magical, ethereal touch */
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+      border-radius: 12px;
+    }
+
+    /* Magical Button Styles */
+    .btn-magic {
+      background: linear-gradient(45deg, #8a2be2, #4b0082);
+      /* Deep purple gradient */
+      color: #fff;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-weight: 700;
+      transition: all 0.4s ease;
+      box-shadow: 0 5px 15px rgba(138, 43, 226, 0.4);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border: none;
+    }
+
+    .btn-magic:hover {
+      background: linear-gradient(45deg, #4b0082, #8a2be2);
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 8px 20px rgba(138, 43, 226, 0.6);
+    }
+
+    /* Card Styles */
+    .card-dark-magic {
+      background: rgba(26, 26, 26, 0.7);
+      /* Darker, slightly transparent */
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-dark-magic:hover {
+      transform: translateY(-8px) scale(1.01);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Section Separators - subtle magical glow */
+    .magic-divider {
+      height: 2px;
+      background: linear-gradient(to right, transparent, #8a2be2, #fce38a, #8a2be2, transparent);
+      border: none;
+      margin: 6rem 0;
+      opacity: 0.6;
+    }
+
+    /* Hero Section Overlay */
+    .hero-overlay {
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.8) 100%);
+    }
+
+    /* Carousel Caption Customization */
+    .carousel-caption-dark {
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+      padding: 2rem;
+      border-radius: 0.5rem;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    /* Easter Egg: Lumos/Nox effect */
+    .lumos-nox-text {
+      cursor: pointer;
+      transition: color 0.5s ease;
+    }
+
+    .lumos-nox-text.lit {
+      color: #fce38a !important;
+      /* Brighter gold when lit */
+      text-shadow: 0 0 10px #fce38a, 0 0 20px #fce38a;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #1a1a1a;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #8a2be2;
+      border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #6a1ba0;
+    }
+
+    /* Easter Egg: Sorting Hat */
+    #sorting-hat-modal {
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(5px);
+    }
+
+    #sorting-hat-modal-content {
+      background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+      border: 2px solid #8a2be2;
+      box-shadow: 0 0 30px rgba(138, 43, 226, 0.7);
+    }
+
+    .house-result-text {
+      font-family: 'Cinzel', serif;
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-shadow: 0 0 15px;
+      animation: pulse 1.5s infinite alternate;
+    }
+
+    @keyframes pulse {
+      from {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      to {
+        transform: scale(1.05);
+        opacity: 0.9;
+      }
+    }
+
+    .gryffindor {
+      color: #ae0001;
+      text-shadow: 0 0 15px #ae0001;
+    }
+
+    .slytherin {
+      color: #1a472a;
+      text-shadow: 0 0 15px #1a472a;
+    }
+
+    .ravenclaw {
+      color: #222f5b;
+      text-shadow: 0 0 15px #222f5b;
+    }
+
+    .hufflepuff {
+      color: #ecb939;
+      text-shadow: 0 0 15px #ecb939;
+    }
   </style>
-  <h2 class="theme mar">Departments at Hogwarts</h2> 
-  <div class="con">
-   
-       
-    <div class="card" style="width: 18rem;">
-      <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/programmes/potions.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Dept. of Potions</h5>
-        <p class="card-text">Students learn to brew magical potions, mastering recipes and techniques for different effects.</p>
+</head>
+
+<body class="antialiased">
+
+  <nav class="fixed top-0 left-0 w-full z-50 glass-effect p-4 flex items-center justify-between">
+    <div class="flex items-center space-x-4">
+      <a class="flex items-center group" href="https://mdrayaanpasha.github.io/hogwarts/html/index.html">
+        <img src="https://mdrayaanpasha.github.io/hogwarts//imgs/hogwarts/logo.png" alt="Hogwarts Logo"
+          class="h-14  mr-3 animate-pulse-slow">
+        <h4 class="text-3xl font-bold text-white group-hover:text-fce38a transition duration-300">Hogwarts Legacy</h4>
+      </a>
+    </div>
+    <div class="md:hidden">
+      <button id="navbar-toggle" class="text-white focus:outline-none">
+        <svg class="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <div id="navbar-links" class="hidden md:flex md:items-center md:space-x-10 text-xl">
+      <a class="text-white hover:text-fce38a transition duration-300 relative group"
+        href="https://mdrayaanpasha.github.io/hogwarts/html/departments.html">
+        Departments
+        <span
+          class="absolute bottom-0 left-0 w-0 h-0.5 bg-fce38a group-hover:w-full transition-all duration-300"></span>
+      </a>
+      <a class="text-white hover:text-fce38a transition duration-300 relative group"
+        href="https://mdrayaanpasha.github.io/hogwarts/html/faculty.html">
+        Faculty
+        <span
+          class="absolute bottom-0 left-0 w-0 h-0.5 bg-fce38a group-hover:w-full transition-all duration-300"></span>
+      </a>
+      <a class="text-white hover:text-fce38a transition duration-300 relative group"
+        href="https://mdrayaanpasha.github.io/hogwarts/html/houses.html">
+        Houses
+        <span
+          class="absolute bottom-0 left-0 w-0 h-0.5 bg-fce38a group-hover:w-full transition-all duration-300"></span>
+      </a>
+      <a class="text-white hover:text-fce38a transition duration-300 relative group"
+        href="https://mdrayaanpasha.github.io/hogwarts/html/sports.html">
+        Quidditch & Sports
+        <span
+          class="absolute bottom-0 left-0 w-0 h-0.5 bg-fce38a group-hover:w-full transition-all duration-300"></span>
+      </a>
+      <a class="btn-magic text-lg" href="#apply">Enroll Now!</a>
+    </div>
+  </nav>
+
+
+  <div id="mobile-nav-overlay"
+    class="fixed inset-0 bg-gray-950 bg-opacity-95 z-40 hidden flex-col items-center justify-center space-y-8 text-3xl md:hidden animate-fade-in">
+    <button id="mobile-nav-close" class="absolute top-8 right-8 text-white focus:outline-none">
+      <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+    <a class="text-white hover:text-fce38a transition duration-300"
+      href="https://mdrayaanpasha.github.io/hogwarts/html/departments.html">Departments</a>
+    <a class="text-white hover:text-fce38a transition duration-300"
+      href="https://mdrayaanpasha.github.io/hogwarts/html/faculty.html">Faculty</a>
+    <a class="text-white hover:text-fce38a transition duration-300"
+      href="https://mdrayaanpasha.github.io/hogwarts/html/houses.html">Houses</a>
+    <a class="text-white hover:text-fce38a transition duration-300"
+      href="https://mdrayaanpasha.github.io/hogwarts/html/sports.html">Quidditch & Sports</a>
+    <a class="btn-magic text-xl" href="#apply">Enroll Now!</a>
+  </div>
+
+
+  <section id="default-carousel" class="relative w-full h-screen pt-16" data-carousel="slide">
+    <div class="relative h-full overflow-hidden">
+      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+        <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/hogwarts/1.jpg"
+          class="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+          alt="Hogwarts Castle at Sunset">
+        <div class="absolute inset-0 hero-overlay flex flex-col items-center justify-center text-center p-6">
+          <h1 class="text-6xl md:text-8xl font-bold text-white mb-6 animate-fade-in-up">
+            Welcome to <span class="text-fce38a">Hogwarts</span>
+          </h1>
+          <p class="text-xl md:text-3xl text-gray-200 mb-8 max-w-3xl animate-fade-in-up delay-200">
+            Unleash your inner witch or wizard. Your journey into magic begins here.
+          </p>
+          <a href="#about" class="btn-magic text-xl animate-fade-in-up delay-400">Discover Your Legacy</a>
+        </div>
+      </div>
+      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+        <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/hogwarts/2.jpg"
+          class="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+          alt="Great Hall Festivities">
+        <div class="absolute inset-0 hero-overlay flex flex-col items-center justify-center text-center p-6">
+          <h1 class="text-6xl md:text-8xl font-bold text-white mb-6 animate-fade-in-up">
+            The Grand <span class="text-fce38a">Great Hall</span>
+          </h1>
+          <p class="text-xl md:text-3xl text-gray-200 mb-8 max-w-3xl animate-fade-in-up delay-200">
+            Where friendships are forged and feasts are legendary.
+          </p>
+          <a href="#about" class="btn-magic text-xl animate-fade-in-up delay-400">Experience the Magic</a>
+        </div>
+      </div>
+      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+        <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/hogwarts/3.webp"
+          class="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+          alt="Quidditch Match in progress">
+        <div class="absolute inset-0 hero-overlay flex flex-col items-center justify-center text-center p-6">
+          <h1 class="text-6xl md:text-8xl font-bold text-white mb-6 animate-fade-in-up">
+            The Thrilling <span class="text-fce38a">Quidditch Pitch</span>
+          </h1>
+          <p class="text-xl md:text-3xl text-gray-200 mb-8 max-w-3xl animate-fade-in-up delay-200">
+            Catch the Snitch, win the Cup!
+          </p>
+          <a href="#about" class="btn-magic text-xl animate-fade-in-up delay-400">Join the Team</a>
+        </div>
       </div>
     </div>
+    <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+      <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"
+        data-carousel-slide-to="0"></button>
+      <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"
+        data-carousel-slide-to="1"></button>
+      <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"
+        data-carousel-slide-to="2"></button>
+    </div>
+    <button type="button"
+      class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+      data-carousel-prev>
+      <span
+        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white dark:bg-gray-800/30 dark:group-hover:bg-gray-800/60 dark:group-focus:ring-gray-800/70">
+        <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M5 1 1 5l4 4" />
+        </svg>
+        <span class="sr-only">Previous</span>
+      </span>
+    </button>
+    <button type="button"
+      class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+      data-carousel-next>
+      <span
+        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white dark:bg-gray-800/30 dark:group-hover:bg-gray-800/60 dark:group-focus:ring-gray-800/70">
+        <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="m1 9 4-4-4-4" />
+        </svg>
+        <span class="sr-only">Next</span>
+      </span>
+    </button>
+  </section>
 
-    <div class="card" style="width: 18rem;">
-      <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/programmes/transfiguration.png" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Dept. of Transfiguration</h5>
-        <p class="card-text">Students learn magic to transform form and apperance of objects and creatures.</p>
+  <hr class="magic-divider">
+
+
+  <section id="about" class="container mx-auto px-6 py-16 text-center">
+    <h2 class="text-5xl font-bold mb-12 animate-fade-in-up">The Ancient Foundations</h2>
+    <div class="flex flex-col md:flex-row items-center justify-center gap-16">
+      <div class="md:w-1/3 relative">
+        <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/hogwarts/logo.png"
+          class=" h-64 mx-auto mb-6 transform hover:scale-110 transition duration-500 ease-in-out filter drop-shadow-lg"
+          alt="Hogwarts Logo">
+
+        <div
+          class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 text-gray-300 text-sm font-light">
+          <span class="bg-gray-900 bg-opacity-70 p-2 rounded-md">"Draco Dormiens Nunquam Titillandus"</span>
+        </div>
+      </div>
+      <div class="md:w-2/3 text-xl leading-relaxed glass-effect p-10">
+        <p class="mb-6">Hogwarts, a beacon of magical education, was founded in the <span
+            class="text-fce38a font-semibold lumos-nox-text">Highlands of Scotland</span> during the <span
+            class="text-fce38a font-semibold lumos-nox-text">9th or 10th century</span> by the four greatest witches and
+          wizards of the age: <span class="text-fce38a font-semibold lumos-nox-text">Godric Gryffindor</span>, <span
+            class="text-fce38a font-semibold lumos-nox-text">Rowena Ravenclaw</span>, <span
+            class="text-fce38a font-semibold lumos-nox-text">Helga Hufflepuff</span>, and <span
+            class="text-fce38a font-semibold lumos-nox-text">Salazar Slytherin</span>.</p>
+        <p class="mb-6">Born from a need to safeguard young magical talents from <span
+            class="text-fce38a font-semibold lumos-nox-text">Muggle persecution</span>, Hogwarts became a sanctuary of
+          learning. Legend whispers that <span class="text-fce38a font-semibold lumos-nox-text">Rowena Ravenclaw</span>,
+          guided by a dream of a <span class="text-fce38a font-semibold lumos-nox-text">warty hog</span> leading her to
+          a <span class="text-fce38a font-semibold lumos-nox-text">cliff by a lake</span>, bestowed upon the school its
+          peculiar yet iconic name.</p>
+        <p>For centuries, Hogwarts has been the heart of wizarding education in <span
+            class="text-fce38a font-semibold lumos-nox-text">Great Britain and Ireland</span>, its location shrouded in
+          powerful enchantments, forever hidden from the uninitiated eyes of <span
+            class="text-fce38a font-semibold lumos-nox-text">Muggles</span> and rival magical institutions alike.</p>
       </div>
     </div>
-    
-    <div class="card" style="width: 18rem;">
-      <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/programmes/charms.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Dept. of Charms</h5>
-        <p class="card-text">Students learn charms and spells, mastering the incantations and wand movements required.</p>
+  </section>
+
+  <hr class="magic-divider">
+
+
+  <section class="container mx-auto px-6 py-16">
+    <h2 class="text-5xl font-bold text-center mb-12 animate-fade-in-up">The Arcane Arts & Sciences</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 justify-items-center">
+
+      <div class="card-dark-magic rounded-xl shadow-lg overflow-hidden w-full max-w-sm group">
+        <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/programmes/potions.jpg"
+          class="w-full h-56 object-cover transform group-hover:scale-105 transition duration-500" alt="Potions">
+        <div class="p-8">
+          <h5 class="text-3xl font-semibold text-white mb-3">Potions Mastery</h5>
+          <p class="text-gray-300 text-lg">Delve into the intricate art of potion-making, mastering ancient recipes and
+            innovative techniques to brew concoctions of profound magical effect.</p>
+        </div>
+      </div>
+
+      <div class="card-dark-magic rounded-xl shadow-lg overflow-hidden w-full max-w-sm group">
+        <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/programmes/transfiguration.png"
+          class="w-full h-56 object-cover transform group-hover:scale-105 transition duration-500"
+          alt="Transfiguration">
+        <div class="p-8">
+          <h5 class="text-3xl font-semibold text-white mb-3">Transfiguration Theory</h5>
+          <p class="text-gray-300 text-lg">Explore the profound magic of altering form and appearance, transforming
+            objects and creatures with precision and control.</p>
+        </div>
+      </div>
+
+      <div class="card-dark-magic rounded-xl shadow-lg overflow-hidden w-full max-w-sm group">
+        <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/programmes/charms.jpg"
+          class="w-full h-56 object-cover transform group-hover:scale-105 transition duration-500" alt="Charms">
+        <div class="p-8">
+          <h5 class="text-3xl font-semibold text-white mb-3">Charms & Enchantments</h5>
+          <p class="text-gray-300 text-lg">Master the delicate dance of incantations and wand movements to cast powerful
+            charms and enchantments, shaping the very fabric of magic.</p>
+        </div>
       </div>
     </div>
-        
-      <h3 style="color: tomato; margin: 5vh;"><a href="https://mdrayaanpasha.github.io/hogwarts/html/departments.html" style="color:tomato;text-decoration:none;cursor:pointer;">View Details →</a></h3>
+    <div class="text-center mt-16">
+      <a href="https://mdrayaanpasha.github.io/hogwarts/html/departments.html"
+        class="inline-flex items-center text-xl text-fce38a hover:underline transition duration-300 group">
+        View All Departments
+        <svg class="ml-3 w-6 h-6 transform group-hover:translate-x-2 transition-transform duration-300" fill="none"
+          stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <hr class="magic-divider">
 
 
-  
-</div>
-<hr>
-<style>
-  .top-faculty{
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-  }
-  .top-faculty img{
-    height: 35vh;
-    width: 17.5vw;
-    border-radius:50%;
-    
-  }
-</style>
-<h2 class="theme mar">Top faculty at Hogwarts</h2>
+  <section class="container mx-auto px-6 py-16">
+    <h2 class="text-5xl font-bold text-center mb-12 animate-fade-in-up">The Guiding Lights of Hogwarts</h2>
+    <div class="flex flex-wrap justify-center gap-16">
+      <div class="relative group text-center">
+        <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/faculty/dumble.jpg"
+          class="w-56 h-56 rounded-full object-cover shadow-xl border-4 border-fce38a transform group-hover:scale-105 transition duration-500"
+          alt="Prof. Dumbledore">
+        <p class="text-gray-400 mt-4 text-xl font-semibold">Albus Dumbledore</p>
 
-<div class="top-faculty">
-  <div class="f">
-    <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/faculty/dumble.jpg" alt="">
-    <center style="color: silver; margin-top: 1vh;">Prof. Dumbledore.</center>
-  </div>
-  <div class="f">
-    <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/faculty/mc.jpg" alt="">
-    <center style="color: silver; margin-top: 1vh;">Prof. Mcgonagall.</center>
-  </div>
-  <div class="f">
-    <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/faculty/snape.jpg" alt="">
-    <center style="color: silver; margin-top: 1vh;">Prof. Snape.</center>
+        <div
+          class="absolute inset-0 flex items-center justify-center bg-gray-900 bg-opacity-80 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 text-sm text-center">
+          <p class="text-gray-300">Headmaster. Known for his wisdom, eccentricities, and defeat of Dark Wizards. Wielder
+            of the Elder Wand.</p>
+        </div>
+      </div>
+      <div class="relative group text-center">
+        <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/faculty/mc.jpg"
+          class="w-56 h-56 rounded-full object-cover shadow-xl border-4 border-fce38a transform group-hover:scale-105 transition duration-500"
+          alt="Prof. McGonagall">
+        <p class="text-gray-400 mt-4 text-xl font-semibold">Minerva McGonagall</p>
 
-    
-  </div>
-  
-  
-  
-    <h3 style="color: tomato; margin: 5vh;"><a href="https://mdrayaanpasha.github.io/hogwarts/html/faculty.html" style="color:tomato;text-decoration:none;cursor:pointer;">View All →</a></h3>
+        <div
+          class="absolute inset-0 flex items-center justify-center bg-gray-900 bg-opacity-80 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 text-sm text-center">
+          <p class="text-gray-300">Head of Gryffindor. Strict but fair Transfiguration professor. A formidable Animagus.
+          </p>
+        </div>
+      </div>
+      <div class="relative group text-center">
+        <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/faculty/snape.jpg"
+          class="w-56 h-56 rounded-full object-cover shadow-xl border-4 border-fce38a transform group-hover:scale-105 transition duration-500"
+          alt="Prof. Snape">
+        <p class="text-gray-400 mt-4 text-xl font-semibold">Severus Snape</p>
 
-  
-</div>
-<hr>
-<h2 class="theme mar">Houses at Hogwarts</h2>
-<div class="houses" style="display: flex;align-items: center;justify-content: space-evenly;flex-wrap: wrap;">
+        <div
+          class="absolute inset-0 flex items-center justify-center bg-gray-900 bg-opacity-80 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 text-sm text-center">
+          <p class="text-gray-300">Potions Master & Head of Slytherin. A complex character with a mysterious past and
+            unwavering loyalty.</p>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-16">
+      <a href="https://mdrayaanpasha.github.io/hogwarts/html/faculty.html"
+        class="inline-flex items-center text-xl text-fce38a hover:underline transition duration-300 group">
+        Meet All Professors
+        <svg class="ml-3 w-6 h-6 transform group-hover:translate-x-2 transition-transform duration-300" fill="none"
+          stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+        </svg>
+      </a>
+    </div>
+  </section>
 
-  <div class="card" style="width: 18rem; border: none;">
-    <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/houses/slytherin-flag.jpg" class="card-img-top" alt="...">
-   <center><small style="color: silver;">Slytherin</small></center> 
-  </div>
-  
-  <div class="card" style="width: 18rem; border: none;">
-    <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/houses/ravenclaw-flag.jpg" class="card-img-top" alt="...">
-    <center><small style="color: silver;">Ravenclaw</small></center>
-  </div>
-  <div class="card" style="width: 18rem; border: none;">
-    <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/houses/gryffindor.jpg" class="card-img-top" alt="...">
-   <center> <small style="color: silver;">Gryffindor</small></center>
-  </div>
-  <div class="card" style="width: 18rem; border: none;">
-    <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/houses/hufflepuff-flag.jpg" class="card-img-top" alt="...">
-   <center><small style="color: silver;">Hufflepuff</small></center> 
-  </div>
-  <h3 style="color: tomato; margin: 5vh;"><a href="https://mdrayaanpasha.github.io/hogwarts/html/houses.html" style="color:tomato;text-decoration:none;curosor:pointer;">View Details →</a></h3>
+  <hr class="magic-divider">
 
 
+  <section class="container mx-auto px-6 py-16">
+    <h2 class="text-5xl font-bold text-center mb-12 animate-fade-in-up">The Noble Houses of Hogwarts</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-10 justify-items-center">
+      <div class="text-center card-dark-magic rounded-xl p-6">
+        <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/houses/slytherin-flag.jpg"
+          class="w-full h-48 object-cover rounded-md mb-4 shadow-md" alt="Slytherin Flag">
+        <small class="text-gray-400 text-lg font-semibold">Slytherin</small>
+      </div>
+      <div class="text-center card-dark-magic rounded-xl p-6">
+        <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/houses/ravenclaw-flag.jpg"
+          class="w-full h-48 object-cover rounded-md mb-4 shadow-md" alt="Ravenclaw Flag">
+        <small class="text-gray-400 text-lg font-semibold">Ravenclaw</small>
+      </div>
+      <div class="text-center card-dark-magic rounded-xl p-6">
+        <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/houses/gryffindor.jpg"
+          class="w-full h-48 object-cover rounded-md mb-4 shadow-md" alt="Gryffindor Flag">
+        <small class="text-gray-400 text-lg font-semibold">Gryffindor</small>
+      </div>
+      <div class="text-center card-dark-magic rounded-xl p-6">
+        <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/houses/hufflepuff-flag.jpg"
+          class="w-full h-48 object-cover rounded-md mb-4 shadow-md" alt="Hufflepuff Flag">
+        <small class="text-gray-400 text-lg font-semibold">Hufflepuff</small>
+      </div>
+    </div>
+    <div class="text-center mt-16">
+      <a href="https://mdrayaanpasha.github.io/hogwarts/html/houses.html"
+        class="inline-flex items-center text-xl text-fce38a hover:underline transition duration-300 group">
+        Explore House Histories
+        <svg class="ml-3 w-6 h-6 transform group-hover:translate-x-2 transition-transform duration-300" fill="none"
+          stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+        </svg>
+      </a>
+      <button id="sort-me-btn" class="btn-magic mt-8 mx-auto block text-lg">
+        <i class='bx bxs-hat text-2xl mr-2'></i> Get Sorted! (Easter Egg)
+      </button>
+    </div>
+  </section>
 
-  
- 
-</div>
+  <hr class="magic-divider">
 
-<hr>
-<h2 class="theme mar">Sports at Hogwarts!</h2>
-<div class="sports con">
-  <div class="card" style="width: 18rem;">
-    <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/sports/q.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Quidditch</h5>
-      <p class="card-text">Quidditch helps Students to master their flying skills and strategies for different positions on their house teams.</p>
+
+  <section class="container mx-auto px-6 py-16">
+    <h2 class="text-5xl font-bold text-center mb-12 animate-fade-in-up">Quidditch & Beyond: Hogwarts Sports</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 justify-items-center">
+      <div class="card-dark-magic rounded-xl shadow-lg overflow-hidden w-full max-w-sm group">
+        <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/sports/q.jpg"
+          class="w-full h-56 object-cover transform group-hover:scale-105 transition duration-500" alt="Quidditch">
+        <div class="p-8">
+          <h5 class="text-3xl font-semibold text-white mb-3">Quidditch</h5>
+          <p class="text-gray-300 text-lg">Soar through the skies! Master flying skills, strategic plays, and teamwork
+            for glory on the Quidditch pitch.</p>
+        </div>
+      </div>
+
+      <div class="card-dark-magic rounded-xl shadow-lg overflow-hidden w-full max-w-sm group">
+        <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/sports/wiz-chess.jpg"
+          class="w-full h-56 object-cover transform group-hover:scale-105 transition duration-500" alt="Wizard Chess">
+        <div class="p-8">
+          <h5 class="text-3xl font-semibold text-white mb-3">Wizard Chess</h5>
+          <p class="text-gray-300 text-lg">Engage in a battle of wits! Command enchanted pieces that move and fight with
+            thrilling autonomy.</p>
+        </div>
+      </div>
+
+      <div class="card-dark-magic rounded-xl shadow-lg overflow-hidden w-full max-w-sm group">
+        <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/sports/gobstone.jpg"
+          class="w-full h-56 object-cover transform group-hover:scale-105 transition duration-500" alt="Gobstone">
+        <div class="p-8">
+          <h5 class="text-3xl font-semibold text-white mb-3">Gobstone</h5>
+          <p class="text-gray-300 text-lg">A game of skill and strategy! Master the techniques to hit opponent's stones
+            out of a circle without getting sprayed by foul-smelling liquid.</p>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-16">
+      <a href="https://mdrayaanpasha.github.io/hogwarts/html/sports.html"
+        class="inline-flex items-center text-xl text-fce38a hover:underline transition duration-300 group">
+        Discover All Sports
+        <svg class="ml-3 w-6 h-6 transform group-hover:translate-x-2 transition-transform duration-300" fill="none"
+          stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <hr class="magic-divider">
+
+
+  <section id="apply" class="container mx-auto px-6 py-16">
+    <div class="glass-effect p-10 rounded-xl shadow-xl max-w-lg mx-auto border-purple-700 border-2">
+      <h2 class="text-4xl font-bold text-center mb-8">Enroll in the Magic!</h2>
+      <form id="applyForm">
+        <div class="mb-8">
+          <label for="name" class="block text-white text-2xl font-semibold mb-3">Enter Your Magical Name</label>
+          <input type="text" id="name"
+            class="w-full px-6 py-4 rounded-lg bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-4 focus:ring-purple-500 focus:border-transparent text-lg placeholder-gray-400"
+            placeholder="e.g., Harry Potter">
+          <p class="text-gray-400 text-sm mt-3">(Don't worry, this isn't a real application, just for fun!)</p>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn-magic text-xl">Cast the Enrollment Spell!</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+
+  <div id="sorting-hat-modal" class="fixed inset-0 hidden items-center justify-center z-[999]">
+    <div id="sorting-hat-modal-content" class="p-10 rounded-xl max-w-md w-full text-center relative">
+      <button id="close-sorting-hat"
+        class="absolute top-4 right-4 text-gray-400 hover:text-white text-3xl">&times;</button>
+      <h3 class="text-4xl font-bold text-fce38a mb-6">The Sorting Hat Speaks...</h3>
+      <p id="sorting-hat-message" class="text-xl text-gray-300 mb-8">Hmm, difficult. Very difficult. Plenty of courage,
+        I see. Not a bad mind either. There's talent, oh yes. And a thirst to prove yourself. But where to put you?</p>
+      <div id="sorting-result" class="hidden">
+        <p class="text-gray-200 text-2xl mb-4">It must be...</p>
+        <p id="house-name" class="house-result-text"></p>
+      </div>
+      <button id="sort-again-btn" class="btn-magic mt-8 hidden">Sort Again!</button>
     </div>
   </div>
-  
-  <div class="card" style="width: 18rem;">
-    <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/sports/wiz-chess.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Wizard Chess</h5>
-      <p class="card-text">Wizard Chess, helps students to master the control of enchanted pieces that move and fight on their own.</p>
+
+
+  <footer class="bg-gray-950 text-gray-500 py-12 mt-20 border-t border-gray-800">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold text-white mb-4">Hogwarts School Of Witchcraft & Wizardry</h2>
+      <p class="text-lg">&copy; 2024 Rayaan Pasha. All rights reserved. <span class="lumos-nox-text">Lumos!</span></p>
+      <div class="flex justify-center space-x-6 mt-6">
+        <a href="#" class="text-gray-400 hover:text-fce38a transition duration-300"><i
+            class='bx bxl-facebook-circle text-3xl'></i></a>
+        <a href="#" class="text-gray-400 hover:text-fce38a transition duration-300"><i
+            class='bx bxl-twitter text-3xl'></i></a>
+        <a href="#" class="text-gray-400 hover:text-fce38a transition duration-300"><i
+            class='bx bxl-instagram-alt text-3xl'></i></a>
+      </div>
     </div>
-  </div>
-  
-  <div class="card" style="width: 18rem;">
-    <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/sports/gobstone.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Gobstone</h5>
-      <p class="card-text">Gobstone, Helps students to master the techniques to hit opponent's stones out of a circle without getting sprayed.</p>
-    </div>
-  </div>
-      
-   <h3 style="color: tomato; margin: 5vh;"><a href="https://mdrayaanpasha.github.io/hogwarts/html/sports.html" style="color:tomato;text-decoration:none;curosor:pointer;">View Details →</a></h3>
+  </footer>
 
-</div>
-<hr>
-<div class="form" id="apply">
-  <form class="mar" id="applyForm">
-    <div class="mb-3">
-      <label for="name" class="form-label">Enter Your Name</label>
-      <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
-      <div id="emailHelp" class="form-text" style="color: white;">(this is not real)</div>
-    </div>
-    
-    <center>
-      <button type="submit" class="btn" style="color: white; background-color: tomato;">Apply!</button>
-    </center>
-  </form>
-  
-</div>
-<!-- ===== BOX ICONS ===== -->
-<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-<!--===== FOOTER =====-->
-<footer class="footer">
-  <div class="footer__container bd-container">
-    <h2 class="footer__title">Hogwarts School Of Witchcraft & Wizardry</h2>
-    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 
-   
-    <p class="footer__copy">&#169; 2024 Rayaan Pasha. All right reserved</p>
-  </div>
-</footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<script>
-  // Function to handle form submission
-function apply(event) {
-  event.preventDefault(); // Prevent default form submission
-  
-  // Get the name entered by the user
-  let name = document.getElementById("name").value;
-  
-  // Check if name is empty
-  if (name.trim() === '') {
-    alert("Please enter your name!");
-    return; // Exit function if name is empty
-  }
-  
-  // Store the name in localStorage
-  localStorage.setItem("name", name);
-  
-  // Redirect to decision.html (or any other action you want to perform)
-  window.location.href = "https://mdrayaanpasha.github.io/hogwarts/html/descion.html";
-}
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-// Event listener for form submission
-document.getElementById("applyForm").addEventListener("submit", apply);
+  <script>
+    // Tailwind CSS config for custom colors
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'fce38a': '#fce38a', /* Golden Snitch / House Points */
+            '8a2be2': '#8a2be2', /* Amethyst / Dark Magic Purple */
+            '4b0082': '#4b0082', /* Indigo / Deeper Purple */
+            'ae0001': '#ae0001', /* Gryffindor Red */
+            '1a472a': '#1a472a', /* Slytherin Green */
+            '222f5b': '#222f5b', /* Ravenclaw Blue */
+            'ecb939': '#ecb939', /* Hufflepuff Yellow */
+          },
+          keyframes: {
+            fadeInUp: {
+              '0%': { opacity: 0, transform: 'translateY(20px)' },
+              '100%': { opacity: 1, transform: 'translateY(0)' },
+            },
+            fadeIn: {
+              '0%': { opacity: 0 },
+              '100%': { opacity: 1 },
+            },
+            pulseSlow: {
+              '0%, 100%': { transform: 'scale(1)' },
+              '50%': { transform: 'scale(1.03)' },
+            }
+          },
+          animation: {
+            'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+            'fade-in': 'fadeIn 0.6s ease-out forwards',
+            'pulse-slow': 'pulseSlow 3s infinite ease-in-out',
+          }
+        }
+      }
+    }
 
-</script>
+    // Navbar Toggle for Mobile
+    const navbarToggle = document.getElementById('navbar-toggle');
+    const mobileNavOverlay = document.getElementById('mobile-nav-overlay');
+    const mobileNavClose = document.getElementById('mobile-nav-close');
 
+    navbarToggle.addEventListener('click', () => {
+      mobileNavOverlay.classList.remove('hidden');
+      mobileNavOverlay.classList.add('flex');
+    });
+
+    mobileNavClose.addEventListener('click', () => {
+      mobileNavOverlay.classList.add('hidden');
+      mobileNavOverlay.classList.remove('flex');
+    });
+
+    mobileNavOverlay.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNavOverlay.classList.add('hidden');
+        mobileNavOverlay.classList.remove('flex');
+      });
+    });
+
+    // Form Submission Logic
+    function apply(event) {
+      event.preventDefault();
+      let name = document.getElementById("name").value;
+      if (name.trim() === '') {
+        alert("Hold up, wizard! You gotta tell us your name first!");
+        return;
+      }
+      localStorage.setItem("name", name);
+      window.location.href = "https://mdrayaanpasha.github.io/hogwarts/html/descion.html";
+    }
+    document.getElementById("applyForm").addEventListener("submit", apply);
+
+    // Easter Egg: Lumos/Nox Text Effect
+    document.querySelectorAll('.lumos-nox-text').forEach(element => {
+      element.addEventListener('click', () => {
+        element.classList.toggle('lit');
+      });
+    });
+
+    // Easter Egg: Sorting Hat Functionality
+    const sortMeBtn = document.getElementById('sort-me-btn');
+    const sortingHatModal = document.getElementById('sorting-hat-modal');
+    const closeSortingHatBtn = document.getElementById('close-sorting-hat');
+    const sortingHatMessage = document.getElementById('sorting-hat-message');
+    const sortingResult = document.getElementById('sorting-result');
+    const houseNameElement = document.getElementById('house-name');
+    const sortAgainBtn = document.getElementById('sort-again-btn');
+
+    const houses = [
+      { name: 'Gryffindor!', colorClass: 'gryffindor', message: 'You belong in Gryffindor, where dwell the brave at heart! Their daring, nerve, and chivalry set Gryffindors apart.' },
+      { name: 'Slytherin!', colorClass: 'slytherin', message: 'You belong in Slytherin, where you\'ll make your real friends! Those cunning folk use any means to achieve their ends.' },
+      { name: 'Ravenclaw!', colorClass: 'ravenclaw', message: 'You belong in Ravenclaw, if you\'s a ready mind! Where those of wit and learning, will always find their kind.' },
+      { name: 'Hufflepuff!', colorClass: 'hufflepuff', message: 'You belong in Hufflepuff, where they are just and loyal! Those patient Hufflepuffs are true, and unafraid of toil.' }
+    ];
+
+    sortMeBtn.addEventListener('click', () => {
+      sortingHatModal.classList.remove('hidden');
+      sortingHatModal.classList.add('flex');
+      sortingHatMessage.textContent = "Hmm, difficult. Very difficult. Plenty of courage, I see. Not a bad mind either. There's talent, oh yes. And a thirst to prove yourself. But where to put you?";
+      sortingResult.classList.add('hidden');
+      sortAgainBtn.classList.add('hidden');
+
+      // Simulate sorting delay
+      setTimeout(() => {
+        const randomHouse = houses[Math.floor(Math.random() * houses.length)];
+        sortingHatMessage.textContent = randomHouse.message;
+        houseNameElement.textContent = randomHouse.name;
+        houseNameElement.className = `house-result-text ${randomHouse.colorClass}`; // Apply specific house color
+        sortingResult.classList.remove('hidden');
+        sortAgainBtn.classList.remove('hidden');
+      }, 3000); // 3-second delay for dramatic effect
+    });
+
+    closeSortingHatBtn.addEventListener('click', () => {
+      sortingHatModal.classList.add('hidden');
+      sortingHatModal.classList.remove('flex');
+    });
+
+    sortAgainBtn.addEventListener('click', () => {
+      sortMeBtn.click(); // Re-trigger the sorting process
+    });
+  </script>
 </body>
+
 </html>

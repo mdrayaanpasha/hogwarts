@@ -1,320 +1,371 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Houses | Hogwarts School of Witchcraft and Wizardry</title>
-    <link rel="stylesheet" href="https://mdrayaanpasha.github.io/hogwarts/css/footer.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Merriweather:wght@300;400;700&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
     <style>
+        /* Custom styles to define colors and fonts, extending Tailwind */
         body {
-            background-color: #000000;
-            color: white;
+            font-family: 'Roboto', sans-serif;
+            background-color: #0a0a0a;
+            /* Dark background */
+            color: #e0e0e0;
+            /* Soft white text */
             overflow-x: hidden;
-            width: 100vw;
         }
-        .theme {
-            color: tomato;
-            font-weight: bold;
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Cinzel', serif;
+            /* Regal and ancient feel */
+            color: #fce38a;
+            /* Golden snitch glow, used for main titles */
         }
-        .mar {
-            margin: 3vw;
+
+        p {
+            font-family: 'Merriweather', serif;
+            /* Classic, readable serif for body text */
         }
-        #myNavbar img {
-            height: 11vh;
-            width: 10vw;
-        }
-        #myNavbar ul {
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-        }
-        #myNavbar a {
-            text-decoration: none;
-            color: white;
-            font-size: 2.2vh;
-        }
-        #myNavbar ul {
-            margin-left: 28vw;
-            margin-right: 0vw;
-        }
-        #myNavbar li {
-            list-style-type: none;
-            margin-left: 1vw;
-            margin-right: 1vw;
-        }
-        #myNavbar {
-            background: rgba(255, 255, 255, 0.2);
+
+        /* Glassmorphism effect for navbar, adjusted for Tailwind */
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 10px 20px;
         }
-        nav button, .navbar-toggler-icon, .navbar-toggler {
-            background-color: #fff;
-            color: white;
+
+        /* Specific House Colors (extend in tailwind.config if needed for more classes) */
+        .gryffindor-red {
+            color: #ae0001;
         }
-        @media (max-width: 1000px) {
-            #myNavbar img {
-                width: 15vw;
-            }
-            nav img {
-                height: 15vw;
-            }
+
+        .slytherin-green {
+            color: #1a472a;
         }
-        .top-faculty {
-            flex-wrap: wrap;
+
+        .hufflepuff-yellow {
+            color: #ecb939;
         }
-        @media (max-width: 1200px) {
-            .f img {
-                height: 10vh;
-            }
+
+        .ravenclaw-blue {
+            color: #222f5b;
         }
-        @media (max-width: 1000px) {
-            .carousel, .slider, .carousel-inner, .carousel-item {
-                height: 70vh;
-                width: 100vw;
-            }
-            nav img {
-                height: 15vw;
-            }
-            .info p {
-                font-size: 2vh;
-            }
-            .f img {
-                width: 20vw;
-            }
+
+        /* Custom Scrollbar (from previous example, good to keep for consistent UI) */
+        ::-webkit-scrollbar {
+            width: 10px;
         }
-        @media (max-width: 900px) {
-            .f img {
-                width: 30vw !important;
-            }
+
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a;
         }
-        @media (max-width: 800px) {
-            #myNavbar img {
-                width: 20vw;
-            }
+
+        ::-webkit-scrollbar-thumb {
+            background: #8a2be2;
+            border-radius: 5px;
         }
-        @media (max-width: 600px) {
-            #myNavbar img {
-                width: 25vw;
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6a1ba0;
+        }
+
+        /* Animations from previous example for consistency */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
-        @media (max-width: 400px) {
-            #myNavbar img {
-                display: none;
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
             }
         }
-        .depts {
-            display: flex;
-            align-items: center;
-            justify-content: space-evenly;
-            flex-wrap: wrap;
-        }
-        .card {
-            margin-top: 5vh;
-        }
-        .card img {
-            width: 47vw;
-            height: 26.4375vw;
-        }
-        .card{
-            width: 47vw;
-        }
-        .card img {
-            opacity: 0.8;
-        }
-        .card h5{
-            color: tomato;
-        }
-        small, .text-body-secondary{
-            color:white !important;
-        }
-        @media(max-width:700px){
-            .card img{
-                height: 56.25vw;
-                width: 97vw ;
+
+        @keyframes pulseSlow {
+
+            0%,
+            100% {
+                transform: scale(1);
             }
-            .card{
-                width: 97vw ;
+
+            50% {
+                transform: scale(1.03);
             }
         }
     </style>
+
+    <script>
+        // Tailwind CSS config for custom colors and animations
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'fce38a': '#fce38a', /* Golden Snitch / House Points */
+                        '8a2be2': '#8a2be2', /* Amethyst / Dark Magic Purple */
+                        '4b0082': '#4b0082', /* Indigo / Deeper Purple */
+                        'ae0001': '#ae0001', /* Gryffindor Red */
+                        '1a472a': '#1a472a', /* Slytherin Green */
+                        '222f5b': '#222f5b', /* Ravenclaw Blue */
+                        'ecb939': '#ecb939', /* Hufflepuff Yellow */
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: 0, transform: 'translateY(20px)' },
+                            '100%': { opacity: 1, transform: 'translateY(0)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: 0 },
+                            '100%': { opacity: 1 },
+                        },
+                        pulseSlow: {
+                            '0%, 100%': { transform: 'scale(1)' },
+                            '50%': { transform: 'scale(1.03)' },
+                        },
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'fade-in': 'fadeIn 0.6s ease-out forwards',
+                        'pulse-slow': 'pulseSlow 3s infinite ease-in-out',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg fixed-top glass" id="myNavbar">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="https://mdrayaanpasha.github.io/hogwarts/html/index.html"></a>
-                <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/hogwarts/logo.png" alt="Hogwarts Logo">
+
+<body class="antialiased">
+    <nav class="fixed top-0 left-0 w-full z-50 glass-effect p-4 flex items-center justify-between">
+        <div class="flex items-center space-x-4">
+            <a class="flex items-center group" href="https://mdrayaanpasha.github.io/hogwarts/html/index.html">
+                <img src="https://mdrayayanpasha.github.io/hogwarts/imgs/hogwarts/logo.png" alt="Hogwarts Logo"
+                    class="h-14  mr-3 animate-pulse-slow">
+                <h4 class="text-3xl font-bold text-white group-hover:text-fce38a transition duration-300">Hogwarts
+                    Legacy</h4>
             </a>
-            <h4>Houses at Hogwarts School </h4>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+        </div>
+        <div class="md:hidden">
+            <button id="navbar-toggle" class="text-white focus:outline-none">
+                <svg class="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="https://mdrayaanpasha.github.io/hogwarts/html/departments.html">Departments</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://mdrayaanpasha.github.io/hogwarts/html/faculty.html">Faculty</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://mdrayaanpasha.github.io/hogwarts/html/houses.html">Houses</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://mdrayaanpasha.github.io/hogwarts/html/sports.html">Sports</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="https://mdrayaanpasha.github.io/hogwarts/html/index.html#apply">Apply!</a>
-                  </li>
-                </ul>
-            </div>
+        </div>
+        <div id="navbar-links" class="hidden md:flex md:items-center md:space-x-10 text-xl">
+            <a class="text-white hover:text-fce38a transition duration-300 relative group"
+                href="https://mdrayaanpasha.github.io/hogwarts/html/departments.html">
+                Departments
+                <span
+                    class="absolute bottom-0 left-0 w-0 h-0.5 bg-fce38a group-hover:w-full transition-all duration-300"></span>
+            </a>
+            <a class="text-white hover:text-fce38a transition duration-300 relative group"
+                href="https://mdrayaanpasha.github.io/hogwarts/html/faculty.html">
+                Faculty
+                <span
+                    class="absolute bottom-0 left-0 w-0 h-0.5 bg-fce38a group-hover:w-full transition-all duration-300"></span>
+            </a>
+            <a class="text-fce38a hover:text-fce38a transition duration-300 relative group"
+                href="https://mdrayaanpasha.github.io/hogwarts/html/houses.html">
+                Houses
+                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-fce38a"></span>
+            </a>
+            <a class="text-white hover:text-fce38a transition duration-300 relative group"
+                href="https://mdrayaanpasha.github.io/hogwarts/html/sports.html">
+                Quidditch & Sports
+                <span
+                    class="absolute bottom-0 left-0 w-0 h-0.5 bg-fce38a group-hover:w-full transition-all duration-300"></span>
+            </a>
+            <a class="btn-magic text-lg px-6 py-3 rounded-full font-bold uppercase tracking-wide bg-gradient-to-r from-8a2be2 to-4b0082 text-white shadow-lg hover:from-4b0082 hover:to-8a2be2 hover:translate-y-[-3px] transition-all duration-400"
+                href="https://mdrayaanpasha.github.io/hogwarts/html/index.html#apply">Enroll Now!</a>
         </div>
     </nav>
 
-    <style>
-        .flex-box{
-            display: flex;
-
-            justify-content: space-evenly;
-            flex-wrap: wrap;
-        }
-        .flex-box img{
-            height: 30vh;
-            width: 15vw;
-            border-radius: 50%;
-        }
-        .div-p{
-            width: 60vw;
-            padding:3vw;
-        }
-
-        @media(max-width:1400px){
-            .flex-box img{
-                width: 20vw;
-            }
-        }
-        @media(max-width:1100px){
-            .flex-box img{
-                height: 20vh;
-                width: 20vw;
-            }
-        }
-
-        @media(max-width:800px){
-            .flex-box img{
-                height: 20vh;
-                width: 25vw;
-            }
-        }
-        @media(max-width:600px){
-            .flex-box{
-                display: block;
-                margin-left: 5%;
-                
-            }
-            .flex-box img{
-                margin-left: 30%;
-                height: 18vh;
-            }
-            .div-p{
-                width: 90vw;
-            }
-        }
-
-        @media(max-width:500px){
-            .flex-box img{
-                height: 30vh;
-                width: 50vw;
-                margin-left: 17%;
-            }
-        }
-
-        @media(max-width:420px){
-            .flex-box img{
-                height: 22vh;
-                width: 50vw;
-                margin-left: 17%;
-            }
-        }
-       
-    </style>
-
-<div class="houses">
-
-        <h4 class="theme mar">Gryffindor</h4>
-        <div class="flex-box">
-            <div class="div">
-                <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/houses/gryffindor.jpg" alt="">
-            </div>
-            <div class="div-p">
-                <p>Founded by Godric Gryffindor, Gryffindor values courage, bravery, nerve, and chivalry. Its emblematic animal is the lion, and its colors are red and gold. The Head of Gryffindor House is Professor Minerva McGonagall. Students from Gryffindor are known for their daring exploits and willingness to stand up for what is right.</p>
-            </div>
-        </div>
-        <hr>
-
-
-        <h4 class="theme mar">Slytherin</h4>
-        <div class="flex-box">
-            <div class="div">
-                <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/houses/slytherin-flag.jpg" alt="">
-            </div>
-            <div class="div-p">
-                <p>Founded by Salazar Slytherin, Slytherin values ambition, cunning, leadership, and resourcefulness. Its emblematic animal is the serpent, and its colors are green and silver. The Head of Slytherin House is Professor Severus Snape (later Horace Slughorn and then Severus Snape again). Slytherin students are known for their determination to achieve their goals and their strong sense of fraternity.</p>
-            </div>
-        </div>
-        <hr>
-
-        <h4 class="theme mar">Hufflepuff</h4>
-        <div class="flex-box">
-            <div class="div">
-                <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/houses/hufflepuff-flag.jpg" alt="">
-            </div>
-            <div class="div-p">
-                <p>Founded by Helga Hufflepuff, Hufflepuff values hard work, patience, justice, and loyalty. Its emblematic animal is the badger, and its colors are yellow and black. The Head of Hufflepuff House is Professor Pomona Sprout. Hufflepuff students are known for their inclusivity and dedication to fair play.</p>
-            </div>
-        </div>
-        <hr>
-
-
-
-        <h4 class="theme mar">Ravenclaw</h4>
-        <div class="flex-box">
-            <div class="div">
-                <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/houses/ravenclaw-flag.jpg" alt="">
-            </div>
-            <div class="div-p">
-                <p>Founded by Rowena Ravenclaw, Ravenclaw values intelligence, creativity, learning, and wit. Its emblematic animal is the eagle, and its colors are blue and silver (or blue and bronze in the books). The Head of Ravenclaw House is Professor Filius Flitwick. Ravenclaw students are known for their pursuit of knowledge and love of learning.</p>
-            </div>
-        </div>
-        <hr>
-
-
+    <div id="mobile-nav-overlay"
+        class="fixed inset-0 bg-gray-950 bg-opacity-95 z-40 hidden flex-col items-center justify-center space-y-8 text-3xl md:hidden animate-fade-in">
+        <button id="mobile-nav-close" class="absolute top-8 right-8 text-white focus:outline-none">
+            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+        <a class="text-white hover:text-fce38a transition duration-300"
+            href="https://mdrayaanpasha.github.io/hogwarts/html/departments.html">Departments</a>
+        <a class="text-white hover:text-fce38a transition duration-300"
+            href="https://mdrayaanpasha.github.io/hogwarts/html/faculty.html">Faculty</a>
+        <a class="text-fce38a hover:text-fce38a transition duration-300"
+            href="https://mdrayaanpasha.github.io/hogwarts/html/houses.html">Houses</a>
+        <a class="text-white hover:text-fce38a transition duration-300"
+            href="https://mdrayaanpasha.github.io/hogwarts/html/sports.html">Quidditch & Sports</a>
+        <a class="btn-magic text-xl px-6 py-3 rounded-full font-bold uppercase tracking-wide bg-gradient-to-r from-8a2be2 to-4b0082 text-white shadow-lg hover:from-4b0082 hover:to-8a2be2 hover:translate-y-[-3px] transition-all duration-400"
+            href="https://mdrayaanpasha.github.io/hogwarts/html/index.html#apply">Enroll Now!</a>
     </div>
-    
-    <!-- ===== BOX ICONS ===== -->
-<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-<!--===== FOOTER =====-->
-<footer class="footer">
-  <div class="footer__container bd-container">
-    <h2 class="footer__title">Hogwarts School Of Witchcraft & Wizardry</h2>
-    
+    <section class="container mx-auto px-6 py-20 mt-16">
+        <h1 class="text-5xl md:text-6xl font-bold text-center mb-16 animate-fade-in-up">
+            The Noble <span class="text-fce38a">Houses</span> of Hogwarts
+        </h1>
 
-   
-    <p class="footer__copy">&#169; 2024 Rayaan Pasha. All right reserved</p>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <div class="space-y-24">
+            <div
+                class="flex flex-col md:flex-row items-center bg-gray-900 bg-opacity-70 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in-up">
+                <div
+                    class="flex-shrink-0 w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden mb-8 md:mb-0 md:mr-12 shadow-lg ring-4 ring-ae0001 group-hover:ring-8 transition-all duration-300">
+                    <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/houses/gryffindor.jpg" alt="Gryffindor Flag"
+                        class="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-300">
+                </div>
+                <div class="text-center md:text-left">
+                    <h4 class="text-4xl font-bold gryffindor-red mb-4">Gryffindor</h4>
+                    <p class="text-gray-300 text-lg leading-relaxed">
+                        Founded by Godric Gryffindor, Gryffindor values courage, bravery, nerve, and chivalry. Its
+                        emblematic animal is the lion, and its colors are red and gold. The Head of Gryffindor House is
+                        Professor Minerva McGonagall. Students from Gryffindor are known for their daring exploits and
+                        willingness to stand up for what is right.
+                    </p>
+                </div>
+            </div>
+            <hr class="magic-divider">
 
-  </div>
-</footer>
+            <div
+                class="flex flex-col md:flex-row items-center bg-gray-900 bg-opacity-70 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in-up delay-100">
+                <div
+                    class="flex-shrink-0 w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden mb-8 md:mb-0 md:mr-12 shadow-lg ring-4 ring-1a472a group-hover:ring-8 transition-all duration-300">
+                    <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/houses/slytherin-flag.jpg"
+                        alt="Slytherin Flag"
+                        class="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-300">
+                </div>
+                <div class="text-center md:text-left">
+                    <h4 class="text-4xl font-bold slytherin-green mb-4">Slytherin</h4>
+                    <p class="text-gray-300 text-lg leading-relaxed">
+                        Founded by Salazar Slytherin, Slytherin values ambition, cunning, leadership, and
+                        resourcefulness. Its emblematic animal is the serpent, and its colors are green and silver. The
+                        Head of Slytherin House is Professor Severus Snape (later Horace Slughorn and then Severus Snape
+                        again). Slytherin students are known for their determination to achieve their goals and their
+                        strong sense of fraternity.
+                    </p>
+                </div>
+            </div>
+            <hr class="magic-divider">
+
+            <div
+                class="flex flex-col md:flex-row items-center bg-gray-900 bg-opacity-70 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in-up delay-200">
+                <div
+                    class="flex-shrink-0 w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden mb-8 md:mb-0 md:mr-12 shadow-lg ring-4 ring-ecb939 group-hover:ring-8 transition-all duration-300">
+                    <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/houses/hufflepuff-flag.jpg"
+                        alt="Hufflepuff Flag"
+                        class="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-300">
+                </div>
+                <div class="text-center md:text-left">
+                    <h4 class="text-4xl font-bold hufflepuff-yellow mb-4">Hufflepuff</h4>
+                    <p class="text-gray-300 text-lg leading-relaxed">
+                        Founded by Helga Hufflepuff, Hufflepuff values hard work, patience, justice, and loyalty. Its
+                        emblematic animal is the badger, and its colors are yellow and black. The Head of Hufflepuff
+                        House is Professor Pomona Sprout. Hufflepuff students are known for their inclusivity and
+                        dedication to fair play.
+                    </p>
+                </div>
+            </div>
+            <hr class="magic-divider">
+
+            <div
+                class="flex flex-col md:flex-row items-center bg-gray-900 bg-opacity-70 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in-up delay-300">
+                <div
+                    class="flex-shrink-0 w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden mb-8 md:mb-0 md:mr-12 shadow-lg ring-4 ring-222f5b group-hover:ring-8 transition-all duration-300">
+                    <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/houses/ravenclaw-flag.jpg"
+                        alt="Ravenclaw Flag"
+                        class="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-300">
+                </div>
+                <div class="text-center md:text-left">
+                    <h4 class="text-4xl font-bold ravenclaw-blue mb-4">Ravenclaw</h4>
+                    <p class="text-gray-300 text-lg leading-relaxed">
+                        Founded by Rowena Ravenclaw, Ravenclaw values intelligence, creativity, learning, and wit. Its
+                        emblematic animal is the eagle, and its colors are blue and silver (or blue and bronze in the
+                        books). The Head of Ravenclaw House is Professor Filius Flitwick. Ravenclaw students are known
+                        for their pursuit of knowledge and love of learning.
+                    </p>
+                </div>
+            </div>
+            <hr class="magic-divider">
+        </div>
+    </section>
+
+    <footer class="bg-gray-950 text-gray-500 py-12 mt-20 border-t border-gray-800">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold text-white mb-4">Hogwarts School Of Witchcraft & Wizardry</h2>
+            <p class="text-lg">&copy; 2024 Rayaan Pasha. All rights reserved. <span
+                    class="lumos-nox-text cursor-pointer transition duration-500 hover:text-fce38a hover:text-shadow-md">Lumos!</span>
+            </p>
+            <div class="flex justify-center space-x-6 mt-6">
+                <a href="#" class="text-gray-400 hover:text-fce38a transition duration-300"><i
+                        class='bx bxl-facebook-circle text-3xl'></i></a>
+                <a href="#" class="text-gray-400 hover:text-fce38a transition duration-300"><i
+                        class='bx bxl-twitter text-3xl'></i></a>
+                <a href="#" class="text-gray-400 hover:text-fce38a transition duration-300"><i
+                        class='bx bxl-instagram-alt text-3xl'></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <script>
+        // Navbar Toggle for Mobile (adapted for Tailwind structure)
+        const navbarToggle = document.getElementById('navbar-toggle');
+        const mobileNavOverlay = document.getElementById('mobile-nav-overlay');
+        const mobileNavClose = document.getElementById('mobile-nav-close');
+
+        navbarToggle.addEventListener('click', () => {
+            mobileNavOverlay.classList.remove('hidden');
+            mobileNavOverlay.classList.add('flex');
+        });
+
+        mobileNavClose.addEventListener('click', () => {
+            mobileNavOverlay.classList.add('hidden');
+            mobileNavOverlay.classList.remove('flex');
+        });
+
+        mobileNavOverlay.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNavOverlay.classList.add('hidden');
+                mobileNavOverlay.classList.remove('flex');
+            });
+        });
+
+        // Easter Egg: Lumos/Nox Text Effect (from previous example)
+        document.querySelectorAll('.lumos-nox-text').forEach(element => {
+            element.addEventListener('click', () => {
+                element.classList.toggle('lit');
+            });
+        });
+    </script>
 </body>
+
 </html>
-
-

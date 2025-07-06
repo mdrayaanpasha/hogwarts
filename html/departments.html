@@ -1,281 +1,788 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Departments | Hogwarts School of Witchcraft and Wizardry</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://mdrayaanpasha.github.io/hogwarts/css/footer.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Merriweather:wght@300;400;700&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
     <style>
+        /* Custom CSS for deep HP immersion and hyper-modern effects */
         body {
-            background-color: #000000;
-            color: white;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            /* Dark, gradient background */
+            color: #e0e0e0;
+            /* Soft white for readability */
             overflow-x: hidden;
-            width: 100vw;
+            /* Prevent horizontal scroll */
         }
-        .theme {
-            color: tomato;
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Cinzel', serif;
+            /* Regal and ancient feel */
+            color: #fce38a;
+            /* Golden snitch glow */
+        }
+
+        p {
+            font-family: 'Merriweather', serif;
+            /* Classic, readable serif for body text */
+        }
+
+        /* Glassmorphism for a magical, ethereal touch */
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+        }
+
+        /* Magical Button Styles */
+        .btn-magic {
+            background: linear-gradient(45deg, #8a2be2, #4b0082);
+            /* Deep purple gradient */
+            color: #fff;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+        }
+
+        .btn-magic:hover {
+            background: linear-gradient(45deg, #4b0082, #8a2be2);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 20px rgba(138, 43, 226, 0.6);
+        }
+
+        /* Card Styles */
+        .card-dark-magic {
+            background: rgba(26, 26, 26, 0.7);
+            /* Darker, slightly transparent */
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+            /* Needed for absolute positioning of spell effect */
+            overflow: hidden;
+            /* Ensures spell effect stays within bounds */
+        }
+
+        .card-dark-magic:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Section Separators - subtle magical glow */
+        .magic-divider {
+            height: 2px;
+            background: linear-gradient(to right, transparent, #8a2be2, #fce38a, #8a2be2, transparent);
+            border: none;
+            margin: 6rem 0;
+            opacity: 0.6;
+        }
+
+        /* Carousel Caption Customization */
+        .carousel-caption-dark {
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+            padding: 2rem;
+            border-radius: 0.5rem;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        /* Easter Egg: Lumos/Nox effect */
+        .lumos-nox-text {
+            cursor: pointer;
+            transition: color 0.5s ease;
+        }
+
+        .lumos-nox-text.lit {
+            color: #fce38a !important;
+            /* Brighter gold when lit */
+            text-shadow: 0 0 10px #fce38a, 0 0 20px #fce38a;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #8a2be2;
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6a1ba0;
+        }
+
+        /* Easter Egg: Sorting Hat */
+        #sorting-hat-modal {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        #sorting-hat-modal-content {
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+            border: 2px solid #8a2be2;
+            box-shadow: 0 0 30px rgba(138, 43, 226, 0.7);
+        }
+
+        .house-result-text {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
             font-weight: bold;
+            text-shadow: 0 0 15px;
+            animation: pulse 1.5s infinite alternate;
         }
-        .mar {
-            margin: 3vw;
+
+        @keyframes pulse {
+            from {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            to {
+                transform: scale(1.05);
+                opacity: 0.9;
+            }
         }
-        #myNavbar img {
-            height: 11vh;
-            width: 10vw;
+
+        .gryffindor {
+            color: #ae0001;
+            text-shadow: 0 0 15px #ae0001;
         }
-        #myNavbar ul {
+
+        .slytherin {
+            color: #1a472a;
+            text-shadow: 0 0 15px #1a472a;
+        }
+
+        .ravenclaw {
+            color: #222f5b;
+            text-shadow: 0 0 15px #222f5b;
+        }
+
+        .hufflepuff {
+            color: #ecb939;
+            text-shadow: 0 0 15px #ecb939;
+        }
+
+        /* Spell Effects */
+        .spell-effect {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            /* Allows clicks to pass through */
+            opacity: 0;
+            transition: opacity 0.4s ease-out;
             display: flex;
             align-items: center;
-            justify-content: space-around;
+            justify-content: center;
+            font-size: 3rem;
+            /* Icon size */
+            color: #fce38a;
+            /* Default spell color */
+            text-shadow: 0 0 10px #fce38a;
         }
-        #myNavbar a {
-            text-decoration: none;
-            color: white;
-            font-size: 2.2vh;
+
+        .card-dark-magic:hover .spell-effect {
+            opacity: 1;
+            animation: spellFadeIn 0.8s forwards;
         }
-        #myNavbar ul {
-            margin-left: 28vw;
-            margin-right: 0vw;
-        }
-        #myNavbar li {
-            list-style-type: none;
-            margin-left: 1vw;
-            margin-right: 1vw;
-        }
-        #myNavbar {
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 10px 20px;
-        }
-        nav button, .navbar-toggler-icon, .navbar-toggler {
-            background-color: #fff;
-            color: white;
-        }
-        @media (max-width: 1000px) {
-            #myNavbar img {
-                width: 15vw;
+
+        @keyframes spellFadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
             }
-            nav img {
-                height: 15vw;
+
+            to {
+                opacity: 1;
+                transform: scale(1);
             }
         }
-        .top-faculty {
-            flex-wrap: wrap;
+
+        /* Specific Spell Animations */
+        .spell-effect.potions::before {
+            content: '⚗️';
+            /* Alembic */
+            animation: potionBubble 1.5s ease-out forwards;
         }
-        @media (max-width: 1200px) {
-            .f img {
-                height: 10vh;
+
+        @keyframes potionBubble {
+            0% {
+                transform: translateY(50px) scale(0.2);
+                opacity: 0;
+            }
+
+            50% {
+                transform: translateY(-10px) scale(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-50px) scale(0.8);
+                opacity: 0;
             }
         }
-        @media (max-width: 1000px) {
-            .carousel, .slider, .carousel-inner, .carousel-item {
-                height: 70vh;
-                width: 100vw;
-            }
-            nav img {
-                height: 15vw;
-            }
-            .info p {
-                font-size: 2vh;
-            }
-            .f img {
-                width: 20vw;
-            }
+
+        .spell-effect.divination::before {
+            content: '🔮';
+            /* Crystal Ball */
+            animation: divinationSparkle 2s infinite alternate;
         }
-        @media (max-width: 900px) {
-            .f img {
-                width: 30vw !important;
+
+        @keyframes divinationSparkle {
+            0% {
+                text-shadow: 0 0 5px #fce38a;
+                transform: scale(1);
+            }
+
+            100% {
+                text-shadow: 0 0 20px #fce38a, 0 0 30px #8a2be2;
+                transform: scale(1.05);
             }
         }
-        @media (max-width: 800px) {
-            #myNavbar img {
-                width: 20vw;
+
+        .spell-effect.creatures::before {
+            content: '🐾';
+            /* Paw Prints */
+            animation: creatureRipple 1s ease-out forwards;
+        }
+
+        @keyframes creatureRipple {
+            0% {
+                transform: scale(0.1);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+                border-radius: 50%;
+                border: 3px solid rgba(255, 255, 255, 0.5);
             }
         }
-        @media (max-width: 600px) {
-            #myNavbar img {
-                width: 25vw;
+
+        .spell-effect.herbology::before {
+            content: '🌿';
+            /* Herb */
+            animation: leafGrow 1s ease-out forwards;
+        }
+
+        @keyframes leafGrow {
+            0% {
+                transform: rotate(0deg) scale(0);
+                opacity: 0;
+            }
+
+            100% {
+                transform: rotate(15deg) scale(1);
+                opacity: 1;
             }
         }
-        @media (max-width: 400px) {
-            #myNavbar img {
-                display: none;
+
+        .spell-effect.transfiguration::before {
+            content: '✨';
+            /* Sparkles */
+            animation: transformEffect 0.7s ease-out forwards;
+        }
+
+        @keyframes transformEffect {
+            0% {
+                transform: rotate(0deg) scale(0.5);
+                opacity: 0;
+            }
+
+            50% {
+                transform: rotate(360deg) scale(1.2);
+                opacity: 1;
+            }
+
+            100% {
+                transform: rotate(720deg) scale(1);
+                opacity: 0;
             }
         }
-        .depts {
-            display: flex;
-            align-items: center;
-            justify-content: space-evenly;
-            flex-wrap: wrap;
+
+        .spell-effect.alchemy::before {
+            content: '⚗️';
+            /* Alternative Alembic, or gold */
+            animation: goldShimmer 2s infinite linear;
         }
-        .card {
-            margin-top: 5vh;
-        }
-        .card img {
-            width: 47vw;
-            height: 26.4375vw;
-        }
-        .card{
-            width: 47vw;
-        }
-        .card img {
-            opacity: 0.8;
-        }
-        .card h5{
-            color: tomato;
-        }
-        small, .text-body-secondary{
-            color:white !important;
-        }
-        @media(max-width:700px){
-            .card img{
-                height: 56.25vw;
-                width: 97vw ;
+
+        @keyframes goldShimmer {
+            0% {
+                filter: hue-rotate(0deg) brightness(1);
             }
-            .card{
-                width: 97vw ;
+
+            50% {
+                filter: hue-rotate(30deg) brightness(1.3);
+            }
+
+            100% {
+                filter: hue-rotate(0deg) brightness(1);
+            }
+        }
+
+        .spell-effect.dark-arts::before {
+            content: '🛡️';
+            /* Shield */
+            animation: shieldAppear 0.5s ease-out forwards;
+        }
+
+        @keyframes shieldAppear {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .spell-effect.history::before {
+            content: '📜';
+            /* Scroll */
+            animation: scrollUnfurl 1s ease-out forwards;
+        }
+
+        @keyframes scrollUnfurl {
+            0% {
+                transform: translateY(-50px) rotateX(90deg);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0) rotateX(0deg);
+                opacity: 1;
+            }
+        }
+
+        .spell-effect.flying::before {
+            content: '🧹';
+            /* Broom */
+            animation: broomFly 1.5s ease-in-out forwards;
+        }
+
+        @keyframes broomFly {
+            0% {
+                transform: translateX(-100%) rotate(-30deg);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0) rotate(0deg);
+                opacity: 1;
+            }
+        }
+
+        .spell-effect.charms::before {
+            content: '🪄';
+            /* Magic Wand */
+            animation: wandWave 1s ease-in-out infinite alternate;
+        }
+
+        @keyframes wandWave {
+            0% {
+                transform: rotate(-10deg);
+            }
+
+            100% {
+                transform: rotate(10deg);
+            }
+        }
+
+        /* Keyframes for general animations */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulseSlow {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.03);
             }
         }
     </style>
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg fixed-top glass" id="myNavbar">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/html/index.html">
-                <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/hogwarts/logo.png" alt="Hogwarts Logo">
+
+<body class="antialiased">
+
+    <nav class="fixed top-0 left-0 w-full z-50 glass-effect p-4 flex items-center justify-between">
+        <div class="flex items-center space-x-4">
+            <a class="flex items-center group" href="https://mdrayaanpasha.github.io/hogwarts/html/index.html">
+                <img src="https://mdrayaanpasha.github.io/hogwarts//imgs/hogwarts/logo.png" alt="Hogwarts Logo"
+                    class="h-14 
+                     mr-3 animate-pulse-slow">
+                <h4 class="text-3xl font-bold text-white group-hover:text-fce38a transition duration-300">Hogwarts
+                    Legacy</h4>
             </a>
-            <h4>Departments at Hogwarts School </h4>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+        </div>
+        <div class="md:hidden">
+            <button id="navbar-toggle" class="text-white focus:outline-none">
+                <svg class="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="https://mdrayaanpasha.github.io/hogwarts/html/departments.html">Departments</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://mdrayaanpasha.github.io/hogwarts/html/faculty.html">Faculty</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://mdrayaanpasha.github.io/hogwarts/html/houses.html">Houses</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://mdrayaanpasha.github.io/hogwarts/html/sports.html">Sports</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="https://mdrayaanpasha.github.io/hogwarts/html/index.html#apply">Apply!</a>
-                  </li>
-                </ul>
-            </div>
+        </div>
+        <div id="navbar-links" class="hidden md:flex md:items-center md:space-x-10 text-xl">
+            <a class="text-fce38a hover:text-fce38a transition duration-300 relative group"
+                href="https://mdrayaanpasha.github.io/hogwarts/html/departments.html">
+                Departments
+                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-fce38a"></span>
+            </a>
+            <a class="text-white hover:text-fce38a transition duration-300 relative group"
+                href="https://mdrayaanpasha.github.io/hogwarts/html/faculty.html">
+                Faculty
+                <span
+                    class="absolute bottom-0 left-0 w-0 h-0.5 bg-fce38a group-hover:w-full transition-all duration-300"></span>
+            </a>
+            <a class="text-white hover:text-fce38a transition duration-300 relative group"
+                href="https://mdrayaanpasha.github.io/hogwarts/html/houses.html">
+                Houses
+                <span
+                    class="absolute bottom-0 left-0 w-0 h-0.5 bg-fce38a group-hover:w-full transition-all duration-300"></span>
+            </a>
+            <a class="text-white hover:text-fce38a transition duration-300 relative group"
+                href="https://mdrayaanpasha.github.io/hogwarts/html/sports.html">
+                Quidditch & Sports
+                <span
+                    class="absolute bottom-0 left-0 w-0 h-0.5 bg-fce38a group-hover:w-full transition-all duration-300"></span>
+            </a>
+            <a class="btn-magic text-lg" href="https://mdrayaanpasha.github.io/hogwarts/html/index.html#apply">Enroll
+                Now!</a>
         </div>
     </nav>
 
 
-    <div class="depts">
-        <div class="card mb-3 text-bg-dark">
-            <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/programmes/potions.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Potions</h5>
-                <p class="card-text">Explore the art of brewing magical concoctions and mastering the science behind them.</p>
-                <p class="card-text"><small class="text-body-secondary">Led by <span class="theme">Professor Severus Snape</span></small></p>
-            </div>
-        </div>
-        <div class="card mb-3 text-bg-dark">
-            <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/programmes/devination.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Divination</h5>
-                <p class="card-text">Study the art of predicting the future through various mystical methods and interpretations.</p>
-                <p class="card-text"><small class="text-body-secondary">Led by <span class="theme">Professor Sybill Trelawney</span></small></p>
-            </div>
-        </div>
-        <div class="card mb-3 text-bg-dark">
-            <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/programmes/care.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Care of Magical Creatures</h5>
-                <p class="card-text">Learn to care for and understand magical beasts, their habitats, and behaviors.</p>
-                <p class="card-text"><small class="text-body-secondary">Led by <span class="theme">Professor Rubeus Hagrid</span></small></p>
-            </div>
-        </div>
-        <div class="card mb-3 text-bg-dark">
-            <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/programmes/herbology.jpeg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Herbology</h5>
-                <p class="card-text">Study magical plants, their properties, and uses in potions, medicine, and everyday magic.</p>
-                <p class="card-text"><small class="text-body-secondary">Led by <span class="theme">Professor Pomona Sprout</span></small></p>
-            </div>
-        </div>
-        <div class="card mb-3 text-bg-dark">
-            <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/programmes/transfiguration.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Transfiguration</h5>
-                <p class="card-text">Master the art of transforming objects and beings into different forms through magic.</p>
-                <p class="card-text"><small class="text-body-secondary">Led by <span class="theme">Professor Minerva McGonagall</span></small></p>
-            </div>
-        </div>
-        <div class="card mb-3 text-bg-dark">
-            <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/programmes/alcamey.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Alchemy</h5>
-                <p class="card-text">Study the mystical science of alchemy, transforming substances and seeking the Philosopher's Stone.</p>
-                <p class="card-text"><small class="text-body-secondary">Led by <span class="theme">Professor Nicolas Flamel</span></small></p>
-            </div>
-        </div>
-        <div class="card mb-3 text-bg-dark">
-            <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/programmes/darkArts.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Defense Against the Dark Arts</h5>
-                <p class="card-text">Learn defensive spells, charms, and counter-curses against dark creatures and dark magic.</p>
-                <p class="card-text"><small class="text-body-secondary">Led by various professors, including <span class="theme">Professor Remus Lupin</span> and <span class="theme">Professor Dolores Umbridge</span></small></p>
-            </div>
-        </div>
-        <div class="card mb-3 text-bg-dark">
-            <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/programmes/history.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">History of Magic</h5>
-                <p class="card-text">Explore the magical history of wizards and witches, famous magical battles, and ancient artifacts.</p>
-                <p class="card-text"><small class="text-body-secondary">Led by <span class="theme">Professor Cuthbert Binns</span></small></p>
-            </div>
-        </div>
-        <div class="card mb-3 text-bg-dark">
-            <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/programmes/flying.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Flying</h5>
-                <p class="card-text">Master the skill of flying on broomsticks and controlling magical flying creatures.</p>
-                <p class="card-text"><small class="text-body-secondary">Led by <span class="theme">Madam Rolanda Hooch</span></small></p>
-            </div>
-        </div>
-        <div class="card mb-3 text-bg-dark">
-            <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/programmes/charms.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Charms</h5>
-                <p class="card-text">Learn a variety of spells and charms to enhance objects and manipulate the environment.</p>
-                <p class="card-text"><small class="text-body-secondary">Led by <span class="theme">Professor Filius Flitwick</span></small></p>
-            </div>
-        </div>
+    <div id="mobile-nav-overlay"
+        class="fixed inset-0 bg-gray-950 bg-opacity-95 z-40 hidden flex-col items-center justify-center space-y-8 text-3xl md:hidden animate-fade-in">
+        <button id="mobile-nav-close" class="absolute top-8 right-8 text-white focus:outline-none">
+            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+        <a class="text-fce38a hover:text-fce38a transition duration-300"
+            href="https://mdrayaanpasha.github.io/hogwarts/html/departments.html">Departments</a>
+        <a class="text-white hover:text-fce38a transition duration-300"
+            href="https://mdrayaanpasha.github.io/hogwarts/html/faculty.html">Faculty</a>
+        <a class="text-white hover:text-fce38a transition duration-300"
+            href="https://mdrayaanpasha.github.io/hogwarts/html/houses.html">Houses</a>
+        <a class="text-white hover:text-fce38a transition duration-300"
+            href="https://mdrayaanpasha.github.io/hogwarts/html/sports.html">Quidditch & Sports</a>
+        <a class="btn-magic text-xl" href="https://mdrayaanpasha.github.io/hogwarts/html/index.html#apply">Enroll
+            Now!</a>
     </div>
-    <!-- ===== BOX ICONS ===== -->
-<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-<!--===== FOOTER =====-->
-<footer class="footer">
-  <div class="footer__container bd-container">
-    <h2 class="footer__title">Hogwarts School Of Witchcraft & Wizardry</h2>
-    
+    <section class="container mx-auto px-6 py-20 mt-16">
+        <h1 class="text-5xl md:text-6xl font-bold text-center mb-16 animate-fade-in-up">
+            The Arcane <span class="text-fce38a">Departments</span> of Hogwarts
+        </h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 justify-items-center">
 
-   
-    <p class="footer__copy">&#169; 2024 Rayaan Pasha. All right reserved</p>
-  </div>
-</footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+            <div
+                class="card-dark-magic rounded-xl shadow-lg overflow-hidden w-full max-w-sm group animate-fade-in-up delay-100">
+                <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/programmes/potions.jpg"
+                    class="w-full h-56 object-cover transform group-hover:scale-105 transition duration-500"
+                    alt="Potions">
+                <div class="spell-effect potions"></div>
+                <div class="p-8">
+                    <h5 class="text-3xl font-semibold text-white mb-3">Potions Mastery</h5>
+                    <p class="text-gray-300 text-lg">Explore the art of brewing magical concoctions and mastering the
+                        science behind them.</p>
+                    <p class="text-gray-400 text-sm mt-3">Led by <span class="text-fce38a font-semibold">Professor
+                            Severus Snape</span></p>
+                </div>
+            </div>
 
+            <div
+                class="card-dark-magic rounded-xl shadow-lg overflow-hidden w-full max-w-sm group animate-fade-in-up delay-200">
+                <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/programmes/devination.jpg"
+                    class="w-full h-56 object-cover transform group-hover:scale-105 transition duration-500"
+                    alt="Divination">
+                <div class="spell-effect divination"></div>
+                <div class="p-8">
+                    <h5 class="text-3xl font-semibold text-white mb-3">Divination</h5>
+                    <p class="text-gray-300 text-lg">Study the art of predicting the future through various mystical
+                        methods and interpretations.</p>
+                    <p class="text-gray-400 text-sm mt-3">Led by <span class="text-fce38a font-semibold">Professor
+                            Sybill Trelawney</span></p>
+                </div>
+            </div>
+
+            <div
+                class="card-dark-magic rounded-xl shadow-lg overflow-hidden w-full max-w-sm group animate-fade-in-up delay-300">
+                <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/programmes/care.jpg"
+                    class="w-full h-56 object-cover transform group-hover:scale-105 transition duration-500"
+                    alt="Care of Magical Creatures">
+                <div class="spell-effect creatures"></div>
+                <div class="p-8">
+                    <h5 class="text-3xl font-semibold text-white mb-3">Care of Magical Creatures</h5>
+                    <p class="text-gray-300 text-lg">Learn to care for and understand magical beasts, their habitats,
+                        and behaviors.</p>
+                    <p class="text-gray-400 text-sm mt-3">Led by <span class="text-fce38a font-semibold">Professor
+                            Rubeus Hagrid</span></p>
+                </div>
+            </div>
+
+            <div
+                class="card-dark-magic rounded-xl shadow-lg overflow-hidden w-full max-w-sm group animate-fade-in-up delay-400">
+                <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/programmes/herbology.jpeg"
+                    class="w-full h-56 object-cover transform group-hover:scale-105 transition duration-500"
+                    alt="Herbology">
+                <div class="spell-effect herbology"></div>
+                <div class="p-8">
+                    <h5 class="text-3xl font-semibold text-white mb-3">Herbology</h5>
+                    <p class="text-gray-300 text-lg">Study magical plants, their properties, and uses in potions,
+                        medicine, and everyday magic.</p>
+                    <p class="text-gray-400 text-sm mt-3">Led by <span class="text-fce38a font-semibold">Professor
+                            Pomona Sprout</span></p>
+                </div>
+            </div>
+
+            <div
+                class="card-dark-magic rounded-xl shadow-lg overflow-hidden w-full max-w-sm group animate-fade-in-up delay-500">
+                <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/programmes/transfiguration.png"
+                    class="w-full h-56 object-cover transform group-hover:scale-105 transition duration-500"
+                    alt="Transfiguration">
+                <div class="spell-effect transfiguration"></div>
+                <div class="p-8">
+                    <h5 class="text-3xl font-semibold text-white mb-3">Transfiguration</h5>
+                    <p class="text-gray-300 text-lg">Master the art of transforming objects and beings into different
+                        forms through magic.</p>
+                    <p class="text-gray-400 text-sm mt-3">Led by <span class="text-fce38a font-semibold">Professor
+                            Minerva McGonagall</span></p>
+                </div>
+            </div>
+
+            <div
+                class="card-dark-magic rounded-xl shadow-lg overflow-hidden w-full max-w-sm group animate-fade-in-up delay-600">
+                <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/programmes/alcamey.jpg"
+                    class="w-full h-56 object-cover transform group-hover:scale-105 transition duration-500"
+                    alt="Alchemy">
+                <div class="spell-effect alchemy"></div>
+                <div class="p-8">
+                    <h5 class="text-3xl font-semibold text-white mb-3">Alchemy</h5>
+                    <p class="text-gray-300 text-lg">Study the mystical science of alchemy, transforming substances and
+                        seeking the Philosopher's Stone.</p>
+                    <p class="text-gray-400 text-sm mt-3">Led by <span class="text-fce38a font-semibold">Professor
+                            Nicolas Flamel</span></p>
+                </div>
+            </div>
+
+            <div
+                class="card-dark-magic rounded-xl shadow-lg overflow-hidden w-full max-w-sm group animate-fade-in-up delay-700">
+                <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/programmes/darkArts.jpg"
+                    class="w-full h-56 object-cover transform group-hover:scale-105 transition duration-500"
+                    alt="Defense Against the Dark Arts">
+                <div class="spell-effect dark-arts"></div>
+                <div class="p-8">
+                    <h5 class="text-3xl font-semibold text-white mb-3">Defense Against the Dark Arts</h5>
+                    <p class="text-gray-300 text-lg">Learn defensive spells, charms, and counter-curses against dark
+                        creatures and dark magic.</p>
+                    <p class="text-gray-400 text-sm mt-3">Led by various professors, including <span
+                            class="text-fce38a font-semibold">Professor Remus Lupin</span> and <span
+                            class="text-fce38a font-semibold">Professor Dolores Umbridge</span></p>
+                </div>
+            </div>
+
+            <div
+                class="card-dark-magic rounded-xl shadow-lg overflow-hidden w-full max-w-sm group animate-fade-in-up delay-800">
+                <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/programmes/history.jpg"
+                    class="w-full h-56 object-cover transform group-hover:scale-105 transition duration-500"
+                    alt="History of Magic">
+                <div class="spell-effect history"></div>
+                <div class="p-8">
+                    <h5 class="text-3xl font-semibold text-white mb-3">History of Magic</h5>
+                    <p class="text-gray-300 text-lg">Explore the magical history of wizards and witches, famous magical
+                        battles, and ancient artifacts.</p>
+                    <p class="text-gray-400 text-sm mt-3">Led by <span class="text-fce38a font-semibold">Professor
+                            Cuthbert Binns</span></p>
+                </div>
+            </div>
+
+            <div
+                class="card-dark-magic rounded-xl shadow-lg overflow-hidden w-full max-w-sm group animate-fade-in-up delay-900">
+                <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/programmes/flying.jpg"
+                    class="w-full h-56 object-cover transform group-hover:scale-105 transition duration-500"
+                    alt="Flying">
+                <div class="spell-effect flying"></div>
+                <div class="p-8">
+                    <h5 class="text-3xl font-semibold text-white mb-3">Flying</h5>
+                    <p class="text-gray-300 text-lg">Master the skill of flying on broomsticks and controlling magical
+                        flying creatures.</p>
+                    <p class="text-gray-400 text-sm mt-3">Led by <span class="text-fce38a font-semibold">Madam Rolanda
+                            Hooch</span></p>
+                </div>
+            </div>
+
+            <div
+                class="card-dark-magic rounded-xl shadow-lg overflow-hidden w-full max-w-sm group animate-fade-in-up delay-1000">
+                <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/programmes/charms.jpg"
+                    class="w-full h-56 object-cover transform group-hover:scale-105 transition duration-500"
+                    alt="Charms">
+                <div class="spell-effect charms"></div>
+                <div class="p-8">
+                    <h5 class="text-3xl font-semibold text-white mb-3">Charms</h5>
+                    <p class="text-gray-300 text-lg">Learn a variety of spells and charms to enhance objects and
+                        manipulate the environment.</p>
+                    <p class="text-gray-400 text-sm mt-3">Led by <span class="text-fce38a font-semibold">Professor
+                            Filius Flitwick</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="bg-gray-950 text-gray-500 py-12 mt-20 border-t border-gray-800">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold text-white mb-4">Hogwarts School Of Witchcraft & Wizardry</h2>
+            <p class="text-lg">&copy; 2024 Rayaan Pasha. All rights reserved. <span class="lumos-nox-text">Lumos!</span>
+            </p>
+            <div class="flex justify-center space-x-6 mt-6">
+                <a href="#" class="text-gray-400 hover:text-fce38a transition duration-300"><i
+                        class='bx bxl-facebook-circle text-3xl'></i></a>
+                <a href="#" class="text-gray-400 hover:text-fce38a transition duration-300"><i
+                        class='bx bxl-twitter text-3xl'></i></a>
+                <a href="#" class="text-gray-400 hover:text-fce38a transition duration-300"><i
+                        class='bx bxl-instagram-alt text-3xl'></i></a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <script>
+        // Tailwind CSS config for custom colors
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'fce38a': '#fce38a', /* Golden Snitch / House Points */
+                        '8a2be2': '#8a2be2', /* Amethyst / Dark Magic Purple */
+                        '4b0082': '#4b0082', /* Indigo / Deeper Purple */
+                        'ae0001': '#ae0001', /* Gryffindor Red */
+                        '1a472a': '#1a472a', /* Slytherin Green */
+                        '222f5b': '#222f5b', /* Ravenclaw Blue */
+                        'ecb939': '#ecb939', /* Hufflepuff Yellow */
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: 0, transform: 'translateY(20px)' },
+                            '100%': { opacity: 1, transform: 'translateY(0)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: 0 },
+                            '100%': { opacity: 1 },
+                        },
+                        pulseSlow: {
+                            '0%, 100%': { transform: 'scale(1)' },
+                            '50%': { transform: 'scale(1.03)' },
+                        }
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'fade-in': 'fadeIn 0.6s ease-out forwards',
+                        'pulse-slow': 'pulseSlow 3s infinite ease-in-out',
+                    }
+                }
+            }
+        }
+
+        // Navbar Toggle for Mobile
+        const navbarToggle = document.getElementById('navbar-toggle');
+        const mobileNavOverlay = document.getElementById('mobile-nav-overlay');
+        const mobileNavClose = document.getElementById('mobile-nav-close');
+
+        navbarToggle.addEventListener('click', () => {
+            mobileNavOverlay.classList.remove('hidden');
+            mobileNavOverlay.classList.add('flex');
+        });
+
+        mobileNavClose.addEventListener('click', () => {
+            mobileNavOverlay.classList.add('hidden');
+            mobileNavOverlay.classList.remove('flex');
+        });
+
+        mobileNavOverlay.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNavOverlay.classList.add('hidden');
+                mobileNavOverlay.classList.remove('flex');
+            });
+        });
+
+        // Easter Egg: Lumos/Nox Text Effect
+        document.querySelectorAll('.lumos-nox-text').forEach(element => {
+            element.addEventListener('click', () => {
+                element.classList.toggle('lit');
+            });
+        });
+
+    </script>
 </body>
+
 </html>
-
-

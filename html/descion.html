@@ -1,91 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Descion | Hogwarts School Of Witchcraft & Wizardry</title>
+    <title>An Owl Has Arrived | Hogwarts</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Merriweather:wght@300;400;700&family=Homemade+Apple&family=Parisienne&family=Tangerine:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --parchment: #fdf5e6;
+            --ink-black: #2a2a2a;
+            --purple-deep: #4b0082;
+            --gold-foil: #c89c3c;
+        }
+
+        body {
+            font-family: 'Merriweather', serif;
+            background-color: #0a0a0a;
+            background-image: url('https://i.pinimg.com/originals/a0/62/8d/a0628d6c56f519c15516a81ce3e58d4a.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #e0e0e0;
+            overflow-x: hidden;
+        }
+
+        /* Use Cinzel for headings and a handwritten feel for letter content and signatures */
+        h1,
+        h2,
+        h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--purple-deep);
+        }
+
+        .letter-text {
+            font-family: 'Homemade Apple', cursive;
+            /* Handwritten feel */
+            color: var(--ink-black);
+            line-height: 2.5;
+            font-size: 1.25rem;
+        }
+
+        .signature-font {
+            font-family: 'Tangerine', cursive;
+        }
+
+        .dumbledore-signature {
+            font-family: 'Parisienne', cursive;
+        }
+
+        /* Glassmorphism Navbar - Kept from original */
+        .glass-effect {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* ENVELOPE STYLING */
+        #envelope-container {
+            cursor: pointer;
+            perspective: 1000px;
+        }
+
+        #envelope {
+            position: relative;
+            width: 320px;
+            height: 220px;
+            background-color: #e0d8c7;
+            border-radius: 5px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: all 1s ease-in-out;
+            transform-style: preserve-3d;
+        }
+
+        #envelope.open {
+            transform: rotateY(180deg);
+        }
+
+        .envelope-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .envelope-back {
+            transform: rotateY(180deg);
+        }
+
+        .seal {
+            width: 70px;
+            height: 70px;
+            background-image: url('https://mdrayaanpasha.github.io/hogwarts/imgs/hogwarts/seal.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            animation: pulse-glow 3s infinite ease-in-out;
+            filter: drop-shadow(0 0 5px #ff4500);
+        }
+
+        .address-text {
+            font-family: 'Homemade Apple', cursive;
+            color: #5d4037;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* LETTER STYLING */
+        #letter-card {
+            background-color: var(--parchment);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+            border: 1px solid #c8bca8;
+            opacity: 0;
+            display: none;
+            /* Hidden until envelope is opened */
+            animation: unfold-letter 1s ease-out forwards;
+        }
+
+        .magic-term {
+            color: var(--gold-foil);
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            text-shadow: 0 0 5px rgba(200, 156, 60, 0.5);
+        }
+
+        /* Keyframe Animations */
+        @keyframes pulse-glow {
+
+            0%,
+            100% {
+                transform: scale(1);
+                filter: drop-shadow(0 0 5px #ff4500);
+            }
+
+            50% {
+                transform: scale(1.05);
+                filter: drop-shadow(0 0 15px #ff4500);
+            }
+        }
+
+        @keyframes unfold-letter {
+            from {
+                opacity: 0;
+                transform: scale(0.1) rotate(-15deg);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+        }
+    </style>
 </head>
-<style>
-    *{
-        font-family: "Parisienne", cursive;
 
-    }
-    nav{
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
-        border-radius: 0.4vw;
-        border:1px solid silver;
-    }
-    nav img{
-        height: 15vh;
-        width: 15vw;
-    }
-    #display-name{
-        padding:2vw;
-    }
-    h1{
-        font-size: 2rem;
-    }
-    h3{
-        font-size: 1.5rem;
-    }
-    p{
-        font-size: 1.2rem;
-    }
-    @media(max-width:400px){
-        nav img{
-            width: 40vw;
-        }
-    }
-    @media(max-width:800px){
-        nav img{
-            width: 30vw;
-        }
-    }
-</style>
-<body>
-    
-    <nav>
-        <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/hogwarts/logo.png" alt="">
-        <div class="div">
-        <h1>Hogwarts School of Witchcraft & Wizardry</h1> <hr>
-        <p>Hogwarts Castle, South Hogwarts Region, Highlands, Scotland, Great Britain</p>
-    </div>
-        
+<body class="antialiased">
+
+    <nav class="fixed top-0 left-0 w-full z-50 glass-effect p-4 flex items-center justify-between">
+        <div class="flex items-center space-x-4">
+            <a class="flex items-center group" href="#">
+                <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/hogwarts/logo.png" alt="Hogwarts Logo"
+                    class="h-14 w-14 mr-3">
+                <h4 class="text-3xl font-bold text-white group-hover:text-gold-foil transition duration-300">Hogwarts
+                    Legacy</h4>
+            </a>
+        </div>
     </nav>
-    
-    <div id="display-name"></div>
-    
-            
-    
+
+    <main class="flex-grow flex flex-col items-center justify-center min-h-screen p-4 pt-24">
+
+        <div id="envelope-container">
+            <div id="envelope">
+                <div class="envelope-face envelope-front">
+                    <div class="address-text">
+                        <p id="recipient-name">An Aspiring Witch or Wizard</p>
+                        <p>The Cupboard Under the Stairs,</p>
+                        <p>4, Privet Drive,</p>
+                        <p>Little Whinging, SURREY</p>
+                    </div>
+                </div>
+                <div class="envelope-face envelope-back">
+                    <div class="seal"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="letter-card" class="w-full max-w-4xl p-8 md:p-16 rounded-lg relative hidden">
+            <div class="flex items-center justify-between mb-8 pb-4 border-b-2" style="border-color: #d3c5a3;">
+                <img src="https://mdrayaanpasha.github.io/hogwarts/imgs/hogwarts/logo.png" alt="Hogwarts Logo"
+                    class="h-24 w-24">
+                <div class="text-right">
+                    <h1 class="text-3xl md:text-4xl font-bold">Hogwarts School of Witchcraft & Wizardry</h1>
+                    <p class="text-gray-600 text-md">HEADMASTER: ALBUS DUMBLEDORE</p>
+                </div>
+            </div>
+
+            <div id="letter-content" class="letter-text space-y-8">
+            </div>
+
+            <div id="signatures" class="mt-12 text-left">
+                <p class="text-xl">Yours sincerely,</p>
+                <p class="text-5xl signature-font text-emerald-800" style="color: #065f46;">Minerva McGonagall</p>
+                <p class="text-lg text-gray-700">Deputy Headmistress</p>
+
+                <p class="text-4xl dumbledore-signature text-purple-900 mt-6" style="color: var(--purple-deep);">Albus
+                    Dumbledore</p>
+                <p class="text-lg text-gray-700">Headmaster</p>
+            </div>
+
+            <div id="postscript" class="mt-10 pt-6 border-t border-dashed" style="border-color: #d3c5a3;">
+                <p class="letter-text text-lg">
+                    <span class="font-bold text-gray-800">P.S.</span> — It is our choices that show what we truly are,
+                    far more than our abilities. The world has many kinds of magic.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const name = localStorage.getItem("name") || "Aspiring Witch or Wizard";
+
+            const recipientName = document.getElementById('recipient-name');
+            recipientName.textContent = `Mr./Ms. ${name.split(' ').pop()}`; // Show last name
+
+            const envelope = document.getElementById('envelope');
+            const envelopeContainer = document.getElementById('envelope-container');
+            const letterCard = document.getElementById('letter-card');
+            const letterContent = document.getElementById('letter-content');
+
+            envelopeContainer.addEventListener('click', () => {
+                if (envelope.classList.contains('open')) return;
+
+                envelope.classList.add('open');
+
+                setTimeout(() => {
+                    envelopeContainer.style.display = 'none';
+                    letterCard.style.display = 'block';
+                    generateLetterContent(name);
+                }, 1000); // Match this with CSS transition duration
+            });
+
+            function generateLetterContent(name) {
+                const letterHTML = `
+                    <p>Dear ${name},</p>
+                    <p>
+                        We refer to your recent application and profound interest in attending Hogwarts School of Witchcraft and Wizardry. Each year, we consult the <span class="magic-term">Quill of Acceptance</span> and the <span class="magic-term">Book of Admittance</span>—ancient, infallible artefacts that have recorded the birth of every magical child in Britain since the school's founding.
+                    </p>
+                    <p>
+                        After careful and repeated consultation, we must inform you that your name, regrettably, has not appeared upon the Book's pages. This indicates that your destiny, while undoubtedly bright, lies within the non-magical world.
+                    </p>
+                    <p>
+                        This news is often met with disappointment, but we trust you will find your own brand of magic in your endeavours. The Muggle world is vast and full of its own wonders, challenges, and triumphs. We wish you the very best in the path that awaits you.
+                    </p>
+                `;
+                letterContent.innerHTML = letterHTML;
+            }
+        });
+    </script>
 </body>
-<!-- Assuming you have a div with id "display-name" where you want to show the name -->
-<div id="display-name"></div>
-
-<script>
-    // Retrieve the name from localStorage
-    let name = localStorage.getItem("name");
-
-    // Get the element where you want to display the name
-    let displayDiv = document.getElementById('display-name');
-
-    // Set the innerHTML of the display div to include the retrieved name
-    displayDiv.innerHTML = `<h3>Dear ${name},</h3>
-<p> Thank you, for your interest in Hogwarts School of Witchcraft & Wizardry,
-We regret to inform you that after careful consideration, your application to Hogwarts School of Witchcraft & Wizardry has been declined. During our review process,  it has come to our attention through our enchanted screening processes that you possess qualities that align more closely with the Muggle world.
-</p><p>
-While we appreciate your interest, Hogwarts is exclusively for those with magical abilities. We encourage you to pursue your interests in the Muggle world and wish you success in all your future endeavors.
-</p><p> <br>
-Yours sincerely,
-</p><p><br>
-<b>Professor Minerva McGonagall (Not Really)</b></p><p>
-Deputy Headmistress  </p><p>
-Hogwarts School of Witchcraft & Wizardry</p>`;
-</script>
 
 </html>
